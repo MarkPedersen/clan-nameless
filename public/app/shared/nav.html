@@ -1,0 +1,25 @@
+<nav class="navbar navbar-inverse container">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="/" class="navbar-brand" >Nameless</a>
+			</div>
+			<ul class="nav navbar-nav navbar-left">
+				<li><a ng-href="/rules">Rules</a></li>
+				<li><a ng-href="/Communication">Communication</a></li>
+				<li><a ng-href="/events">Events</a></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right" style="margin-right: 1em;">
+
+				<li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">Logout</a></style></li>
+			</ul>
+		</div>	
+	</nav>
+<style type="text/css">
+.selectors li {
+	font-size: 46px;
+	line-height: 32px;
+	display: inline;
+	padding: 0 2px;	
+}	
+</style>

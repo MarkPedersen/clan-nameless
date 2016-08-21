@@ -1,0 +1,60 @@
+
+<div class="page-header">
+	<div ng-if="main.user.data.role=='admin'" class="pull-right">
+	<a class="btn btn-danger" href="#" ng-click="event.deleteEvent(event.eventData._id)"><span class="glyphicon glyphicon-remove"></span>delete event</a>
+	<!-- <button ng-if="event.type == 'edit'" class="btn btn-danger btn-lg pull-right" id="delBtn" ng-click="event.deleteEvent(event.eventData._id)"><span class="glyphicon glyphicon-remove"></span></button> -->
+</div>
+	<h1 ng-if="event.type == 'create'">Create Event</h1>
+	<h1 ng-if="event.type == 'edit'">{{ event.eventData.name }}</h1>
+</div>
+
+<div class="col-md-6">
+	<h3>Info</h3>
+<form class="form-horizontal" ng-submit="event.saveEvent()">
+	
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="event.eventData.name">
+		</div>
+	</div>
+
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Game</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="event.eventData.game">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Description</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="event.eventData.description">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Date</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="event.eventData.date">
+		</div>
+	</div>
+
+
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-6">
+			<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="event.type == 'create'">Create Event</button>
+
+			<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="event.type == 'edit'">Edit Event</button>
+		</div>
+	</div>
+</form>
+
+<div class="row show-hide-message" ng-show="event.message">
+	<div class="col-sm-6 col-sm-offset-2">
+		<div class="alert alert-info">
+			{{ event.message }}
+		</div>
+	</div>
+</div>

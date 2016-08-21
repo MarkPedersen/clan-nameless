@@ -1,0 +1,44 @@
+<div class="container">
+<div class="page-header">
+	<h1>
+		Events
+		<a ng-href="/events/create" class="btn btn-default">
+			<span class="glyphicon glyphicon-plus"></span>
+			New Event
+		</a>
+	</h1>
+</div>
+
+
+<!-- LOADING MESSAGE -->
+<div class="jumbotron text-center" ng-show="user.processing">
+	<span class="glyphicon glyphicon-repeat spinner"></span>
+	<p>Loading events.....</p>
+</div>
+
+	<table class="table table-bordered table-striped" ng-show="tevent.events">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Game</th>
+				<th>Date</th>
+				<th class="col-sm-2"></th>
+			</tr>
+		</thead>
+
+
+		<tbody>
+			<tr ng-repeat="event in tevent.events">
+				<td>{{ event.name }}</td>
+				<td>{{ event.description}}</td>
+				<td>{{ event.game }}</td>
+				<td>{{ event.date }}</td>
+				<td><a ng-href="/events/{{ event._id}}" class="btn btn-info">Edit</a></td>
+			</tr>
+		</tbody>
+
+
+
+	</table>
+</div>

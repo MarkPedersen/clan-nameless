@@ -1,0 +1,59 @@
+<html>
+<head>
+	<title>Nameless</title>
+
+	<!-- Load Jquery via CDN -->
+	<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+
+	<!-- FOR ANGULAR ROUTING -->
+	<base href="/">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.1/paper/bootstrap.min.css">
+
+
+	<!-- JS -->
+	<!-- Load Angular and Angular-Route via CDN -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<!-- Controllers -->	
+	<script src="app/components/event/eventsController.js"></script>
+	<script src="app/components/user/userCtrl.js"></script>
+	<script src="app/components/auth/mainCtrl.js"></script>
+	
+	<!-- Services  -->
+	<script src="app/components/event/eventsService.js"></script>
+	<script src="app/components/auth/authService.js"></script>
+	<script src="app/components/user/userService.js"></script>
+	
+
+	<!-- main Angular app files -->
+	<script src="app/app.routes.js"></script>
+	<script src="app/app.js"></script>
+
+
+</head>
+
+
+
+
+<body ng-app="Nameless" ng-controller="mainController as main" >
+
+
+<header>
+	<ng-include src="'app/shared/navadmin.html'"/>
+</header>
+
+<main class="container">
+	<!-- ANGULAR VIEWS -->
+	<div ng-view></div>
+	
+</main>
+<footer>
+	<ng-include src="'app/shared/footer.html'"/>
+</footer>
+</body>
+</html>
